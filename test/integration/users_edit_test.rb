@@ -7,6 +7,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
   test "unsuccessful edit" do
+    Rails.logger.debug(@user)
     log_in_as(@user)
     get edit_user_path(@user)
     assert_template 'users/edit'
